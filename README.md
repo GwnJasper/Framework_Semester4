@@ -7,9 +7,15 @@ Using this framework is pretty easy. There are a few steps that you need to do t
 2. Connect the script.js to your html file.
     (do this by using the regular Javascript script line).
 3. Copy paste this into your html file:
+
+{::nomarkdown}
+
     <div id="preloader" class="overlay">
         <img src="img/spinner.gif" class="spinner">
     </div>
+
+{:/}
+
 4. Connect the CSS file to your html file.
     (do this my using the regular CSS line)
 Everything should be working now.
