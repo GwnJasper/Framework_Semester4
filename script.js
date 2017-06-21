@@ -1,7 +1,7 @@
-//Nieuw event aanmaken
+//Create New Event
 var body = new Event('body');
 
-//check of body beschikbaar is, elke 10 miliseconde
+//Check if body is ready, every 10 milisecond
 var intID = setInterval(function(){
     if(document.body){
         document.dispatchEvent(body);
@@ -9,7 +9,7 @@ var intID = setInterval(function(){
     }                    
 },10)
 
-//aanmaken van nieuw html fragment
+//Create new Fragment
 var newFragment = function(html){
     var fragment = document.createDocumentFragment();
     var temp = document.createElement('div');
@@ -22,15 +22,15 @@ var newFragment = function(html){
     return fragment;
 };
 
-//maken van de preloader.
+//Create Preloader
 var preloader = newFragment('<div id="preloader" class="overlay"> <img src="img/spinner.gif" class="spinner"> </div>');
 
-//preloader gebruiken wanneer body beschikbaar is
+//Use Preloader when body is ready
 document.addEventListener('body', function(){
     document.body.insertBefore(preloader, document.body.childNodes[0]);
 });
 
-//Preloader weghalen
+//Remove Preloader
 var removePreloader = function(){
     var preloader = document.getElementById('preloader');
     preloader.style.opacity = 1;
@@ -44,14 +44,10 @@ var removePreloader = function(){
     },70);
 };
 
-//haal preloader weg wanneer pagina volledig geladan is
+//Remove Preloader when body is loaded
 window.addEventListener('load', removePreloader);
 
-
-
-
-
-//Controle of body klaar is
+//Check if body is ready. 
 document.addEventListener('body', function(){ 
     console.log('body is ready');
 })
